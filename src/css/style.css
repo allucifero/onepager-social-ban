@@ -79,6 +79,8 @@ html, body {
   font-weight: 700;
   color: #6d4c00;
   margin-bottom: 12px;
+  align-self: flex-start;
+  width: fit-content;
 }
 .greeting-icon { width: 18px; height: 18px; }
 
@@ -149,6 +151,9 @@ html, body {
 ══════════════════════════════════════════ */
 .info-section {
   padding: 24px 40px;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 .info-box {
   background: var(--yellow);
@@ -195,8 +200,6 @@ html, body {
   gap: 32px;
   padding: 32px 48px 16px;
   align-items: start;
-  max-width: 1400px;
-  margin: 0 auto;
   width: 100%;
 }
 .hero__left {
@@ -234,16 +237,12 @@ html, body {
    DESKTOP – PARK SCENE
 ══════════════════════════════════════════ */
 .park-scene {
-  padding: 0 24px;
-  max-width: 1400px;
-  margin: 0 auto;
   width: 100%;
 }
 .park-svg {
   width: 100%;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  max-height: 220px;
+  display: block;
+  max-height: 260px;
 }
 
 /* ══════════════════════════════════════════
