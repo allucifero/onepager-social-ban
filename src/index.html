@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Die Gesundheits-Reserve</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       DESKTOP LAYOUT (≥ 1024px)
+  ═══════════════════════════════════════════ -->
+  <div class="layout layout--desktop">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header__inner">
+        <i data-lucide="shield-check" class="header__icon"></i>
+        <span>DIE GESUNDHEITS-RESERVE</span>
+        <i data-lucide="shield-check" class="header__icon"></i>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero__left">
+        <!-- Cactus SVG -->
+        <div class="cactus-wrap">
+          <svg class="cactus-svg" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Pot -->
+            <path d="M55 170 L45 200 L115 200 L105 170 Z" fill="#c8a97e"/>
+            <rect x="42" y="160" width="76" height="14" rx="5" fill="#b8906a"/>
+            <!-- Main stem -->
+            <rect x="68" y="60" width="24" height="110" rx="12" fill="#5cb85c"/>
+            <!-- Left arm -->
+            <rect x="30" y="90" width="42" height="22" rx="11" fill="#5cb85c"/>
+            <rect x="28" y="68" width="22" height="45" rx="11" fill="#5cb85c"/>
+            <!-- Right arm -->
+            <rect x="88" y="100" width="42" height="22" rx="11" fill="#5cb85c"/>
+            <rect x="110" y="78" width="22" height="45" rx="11" fill="#5cb85c"/>
+            <!-- Spikes -->
+            <line x1="80" y1="70" x2="80" y2="60" stroke="#4a9e4a" stroke-width="2"/>
+            <line x1="72" y1="80" x2="64" y2="74" stroke="#4a9e4a" stroke-width="2"/>
+            <line x1="88" y1="80" x2="96" y2="74" stroke="#4a9e4a" stroke-width="2"/>
+            <!-- Face -->
+            <circle cx="73" cy="95" r="4" fill="#333"/>
+            <circle cx="87" cy="95" r="4" fill="#333"/>
+            <path d="M72 108 Q80 116 88 108" stroke="#333" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <!-- Stethoscope -->
+            <circle cx="80" cy="78" r="6" fill="none" stroke="#e53935" stroke-width="2"/>
+            <path d="M86 78 Q95 78 95 88 Q95 100 88 100" stroke="#e53935" stroke-width="2" fill="none"/>
+            <circle cx="88" cy="102" r="4" fill="#e53935"/>
+            <!-- Waving arm detail -->
+            <circle cx="28" cy="66" r="8" fill="#5cb85c"/>
+          </svg>
+        </div>
+      </div>
+      <div class="hero__right">
+        <div class="greeting-badge" id="greeting-desktop">
+          <i data-lucide="sun" class="greeting-icon"></i>
+          <span id="greeting-text-desktop">Guten Morgen!</span>
+        </div>
+        <h1 class="hero__headline">STOPP! Eine kurze Nachricht von deinem Netzwerk-Doc!</h1>
+        <p class="hero__domain">Du wolltest gerade <strong id="domain-desktop" class="domain-highlight">diese Seite</strong> besuchen.</p>
+        <div class="quote-box" id="quote-desktop"></div>
+      </div>
+    </section>
+
+    <!-- Illustration Strip -->
+    <section class="park-scene">
+      <!-- Park SVG Scene -->
+      <svg class="park-svg" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky -->
+        <rect width="900" height="200" fill="#b3e5fc"/>
+        <!-- Ground -->
+        <ellipse cx="450" cy="185" rx="450" ry="30" fill="#81c784"/>
+        <rect x="0" y="175" width="900" height="30" fill="#81c784"/>
+        <!-- Sun -->
+        <circle cx="820" cy="40" r="30" fill="#fff176"/>
+        <line x1="820" y1="2" x2="820" y2="14" stroke="#fff176" stroke-width="3"/>
+        <line x1="820" y1="66" x2="820" y2="78" stroke="#fff176" stroke-width="3"/>
+        <line x1="782" y1="40" x2="770" y2="40" stroke="#fff176" stroke-width="3"/>
+        <line x1="858" y1="40" x2="870" y2="40" stroke="#fff176" stroke-width="3"/>
+        <!-- Trees -->
+        <rect x="98" y="100" width="14" height="75" fill="#8d6e63"/>
+        <circle cx="105" cy="88" r="38" fill="#66bb6a"/>
+        <circle cx="88" cy="100" r="28" fill="#81c784"/>
+        <circle cx="125" cy="100" r="28" fill="#4caf50"/>
+        <rect x="298" y="110" width="14" height="65" fill="#8d6e63"/>
+        <circle cx="305" cy="98" r="32" fill="#4caf50"/>
+        <circle cx="288" cy="110" r="24" fill="#66bb6a"/>
+        <!-- Bench -->
+        <rect x="420" y="148" width="80" height="8" rx="3" fill="#a1887f"/>
+        <rect x="425" y="130" width="70" height="6" rx="2" fill="#bcaaa4"/>
+        <rect x="428" y="140" width="6" height="16" fill="#8d6e63"/>
+        <rect x="486" y="140" width="6" height="16" fill="#8d6e63"/>
+        <!-- Path -->
+        <ellipse cx="450" cy="180" rx="200" ry="8" fill="#d4c5a9" opacity="0.6"/>
+        <!-- Person 1 – walking -->
+        <circle cx="220" cy="110" r="14" fill="#ffcc80"/>
+        <rect x="212" y="124" width="16" height="32" rx="5" fill="#42a5f5"/>
+        <line x1="220" y1="130" x2="208" y2="150" stroke="#42a5f5" stroke-width="5" stroke-linecap="round"/>
+        <line x1="220" y1="130" x2="232" y2="148" stroke="#42a5f5" stroke-width="5" stroke-linecap="round"/>
+        <line x1="216" y1="156" x2="210" y2="172" stroke="#795548" stroke-width="5" stroke-linecap="round"/>
+        <line x1="224" y1="156" x2="230" y2="172" stroke="#795548" stroke-width="5" stroke-linecap="round"/>
+        <!-- Person 2 – waving on bench -->
+        <circle cx="460" cy="122" r="12" fill="#ffe0b2"/>
+        <rect x="453" y="134" width="14" height="24" rx="4" fill="#ef9a9a"/>
+        <line x1="453" y1="138" x2="442" y2="128" stroke="#ef9a9a" stroke-width="4" stroke-linecap="round"/>
+        <line x1="467" y1="138" x2="476" y2="128" stroke="#ef9a9a" stroke-width="4" stroke-linecap="round"/>
+        <line x1="456" y1="158" x2="453" y2="175" stroke="#795548" stroke-width="4" stroke-linecap="round"/>
+        <line x1="464" y1="158" x2="467" y2="175" stroke="#795548" stroke-width="4" stroke-linecap="round"/>
+        <!-- Person 3 – kid running -->
+        <circle cx="650" cy="118" r="11" fill="#ffcc80"/>
+        <rect x="643" y="129" width="14" height="22" rx="4" fill="#ce93d8"/>
+        <line x1="643" y1="133" x2="633" y2="122" stroke="#ce93d8" stroke-width="4" stroke-linecap="round"/>
+        <line x1="657" y1="133" x2="667" y2="125" stroke="#ce93d8" stroke-width="4" stroke-linecap="round"/>
+        <line x1="647" y1="151" x2="638" y2="168" stroke="#8d6e63" stroke-width="4" stroke-linecap="round"/>
+        <line x1="653" y1="151" x2="662" y2="166" stroke="#8d6e63" stroke-width="4" stroke-linecap="round"/>
+        <!-- Clouds -->
+        <ellipse cx="200" cy="30" rx="50" ry="20" fill="white" opacity="0.9"/>
+        <ellipse cx="230" cy="24" rx="35" ry="18" fill="white" opacity="0.9"/>
+        <ellipse cx="160" cy="28" rx="30" ry="15" fill="white" opacity="0.9"/>
+        <ellipse cx="550" cy="20" rx="45" ry="18" fill="white" opacity="0.9"/>
+        <ellipse cx="580" cy="15" rx="30" ry="15" fill="white" opacity="0.9"/>
+        <ellipse cx="515" cy="22" rx="28" ry="14" fill="white" opacity="0.9"/>
+      </svg>
+    </section>
+
+    <!-- Info Box -->
+    <section class="info-section">
+      <div class="info-box">
+        <div class="info-box__icon"><i data-lucide="heart-pulse"></i></div>
+        <div>
+          <h2 class="info-box__title">WIR PASSEN AUF DICH AUF!</h2>
+          <p class="info-box__text">Manche Services sind hier gesperrt. Das ist deine Chance, wichtigere Dinge zu tun als endlos zu scrollen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__blocked">
+        <i data-lucide="ban" class="footer__ban-icon"></i>
+        <strong>BLOCKIERTE UNTERHALTUNG:</strong>
+        <span>4Chan (Die dunkle Seite) · TikTok (Die Endlosschleife) · und was sonst noch ablenkt</span>
+      </div>
+      <div class="footer__cta">
+        Nutz die Zeit für echte Verbindungen! <span class="hashtag">#RealLifeIsCalling</span>
+      </div>
+    </footer>
+
+  </div><!-- /layout--desktop -->
+
+
+  <!-- ═══════════════════════════════════════════
+       TABLET LAYOUT (≥ 600px, < 1024px)
+  ═══════════════════════════════════════════ -->
+  <div class="layout layout--tablet">
+
+    <header class="header">
+      <div class="header__inner">
+        <i data-lucide="shield-check" class="header__icon"></i>
+        <span>DIE GESUNDHEITS-RESERVE</span>
+        <i data-lucide="shield-check" class="header__icon"></i>
+      </div>
+    </header>
+
+    <section class="tablet-hero">
+      <div class="greeting-badge" id="greeting-tablet">
+        <i data-lucide="sun" class="greeting-icon"></i>
+        <span id="greeting-text-tablet">Guten Morgen!</span>
+      </div>
+      <h1 class="tablet-hero__headline">WICHTIGER HINWEIS:<br>Weniger Pixel, mehr Lachen!</h1>
+      <p class="tablet-hero__domain">Du wolltest <strong id="domain-tablet" class="domain-highlight">diese Seite</strong> aufrufen.</p>
+
+      <!-- Blocked icon -->
+      <div class="blocked-icon-wrap">
+        <svg viewBox="0 0 120 120" class="blocked-icon-svg" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="60" cy="60" r="55" fill="#ef5350" opacity="0.12"/>
+          <circle cx="60" cy="60" r="55" fill="none" stroke="#ef5350" stroke-width="6"/>
+          <line x1="22" y1="22" x2="98" y2="98" stroke="#ef5350" stroke-width="8" stroke-linecap="round"/>
+          <!-- Phone -->
+          <rect x="38" y="30" width="44" height="60" rx="8" fill="#455a64"/>
+          <rect x="42" y="36" width="36" height="44" rx="3" fill="#80cbc4"/>
+          <circle cx="60" cy="86" r="4" fill="#b0bec5"/>
+          <!-- TikTok-ish note -->
+          <path d="M52 48 L52 65 M52 52 Q60 44 68 50 Q76 56 68 62 Q60 68 52 62" fill="none" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Dining scene -->
+    <section class="dining-scene">
+      <svg class="dining-svg" viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg">
+        <rect width="700" height="220" fill="#fff8e1"/>
+        <!-- Table -->
+        <ellipse cx="350" cy="175" rx="240" ry="28" fill="#bcaaa4"/>
+        <rect x="110" y="160" width="480" height="22" rx="8" fill="#d7ccc8"/>
+        <!-- Plates/food -->
+        <ellipse cx="230" cy="162" rx="38" ry="10" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="2"/>
+        <circle cx="230" cy="162" r="24" fill="#a5d6a7" opacity="0.7"/>
+        <ellipse cx="350" cy="162" rx="38" ry="10" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="2"/>
+        <circle cx="350" cy="162" r="24" fill="#ffcc80" opacity="0.8"/>
+        <ellipse cx="470" cy="162" rx="38" ry="10" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="2"/>
+        <circle cx="470" cy="162" r="24" fill="#ef9a9a" opacity="0.7"/>
+        <!-- Glasses -->
+        <rect x="295" y="140" width="8" height="24" rx="3" fill="#80deea"/>
+        <rect x="395" y="140" width="8" height="24" rx="3" fill="#80deea"/>
+        <!-- Person 1 -->
+        <circle cx="160" cy="110" r="18" fill="#ffcc80"/>
+        <path d="M140 128 Q160 118 180 128 L185 165 L135 165 Z" fill="#42a5f5"/>
+        <line x1="140" y1="135" x2="120" y2="152" stroke="#42a5f5" stroke-width="6" stroke-linecap="round"/>
+        <line x1="180" y1="135" x2="195" y2="148" stroke="#42a5f5" stroke-width="6" stroke-linecap="round"/>
+        <!-- Talking bubble -->
+        <ellipse cx="118" cy="100" rx="22" ry="14" fill="white" stroke="#e0e0e0" stroke-width="1.5"/>
+        <text x="118" y="105" text-anchor="middle" font-size="14" fill="#555">😄</text>
+        <polygon points="130,110 122,118 136,114" fill="white" stroke="#e0e0e0" stroke-width="1.5"/>
+        <!-- Person 2 -->
+        <circle cx="350" cy="100" r="18" fill="#ffe0b2"/>
+        <path d="M330 118 Q350 108 370 118 L375 165 L325 165 Z" fill="#ef9a9a"/>
+        <line x1="330" y1="124" x2="310" y2="145" stroke="#ef9a9a" stroke-width="6" stroke-linecap="round"/>
+        <line x1="370" y1="124" x2="390" y2="145" stroke="#ef9a9a" stroke-width="6" stroke-linecap="round"/>
+        <!-- Person 3 -->
+        <circle cx="540" cy="110" r="18" fill="#d7ccc8"/>
+        <path d="M520 128 Q540 118 560 128 L565 165 L515 165 Z" fill="#ce93d8"/>
+        <line x1="520" y1="135" x2="500" y2="150" stroke="#ce93d8" stroke-width="6" stroke-linecap="round"/>
+        <line x1="560" y1="135" x2="576" y2="148" stroke="#ce93d8" stroke-width="6" stroke-linecap="round"/>
+        <!-- Talking bubble 2 -->
+        <ellipse cx="576" cy="98" rx="22" ry="14" fill="white" stroke="#e0e0e0" stroke-width="1.5"/>
+        <text x="576" y="103" text-anchor="middle" font-size="14" fill="#555">🎉</text>
+        <polygon points="562,108 570,116 558,114" fill="white" stroke="#e0e0e0" stroke-width="1.5"/>
+      </svg>
+    </section>
+
+    <section class="tablet-text">
+      <p>Hey! Bestimmte Apps sind hier nicht erlaubt. Gönn dir 'ne Pause und verbring Zeit mit uns!</p>
+      <p class="tablet-text__sub">Kein TikTok, kein 4Chan — und was sonst noch ablenkt.</p>
+      <div class="quote-box" id="quote-tablet"></div>
+    </section>
+
+    <div class="tablet-cta">
+      <strong>GENIESS DIE GUTE ZEIT.</strong><br>
+      <span class="hashtag">#GemeinsamStattEinsam</span>
+    </div>
+
+    <footer class="footer footer--compact">
+      <div class="footer__blocked">
+        <i data-lucide="ban" class="footer__ban-icon"></i>
+        <span>4Chan · TikTok · und andere Ablenkungen</span>
+      </div>
+    </footer>
+
+  </div><!-- /layout--tablet -->
+
+
+  <!-- ═══════════════════════════════════════════
+       MOBILE LAYOUT (< 600px)
+  ═══════════════════════════════════════════ -->
+  <div class="layout layout--mobile">
+
+    <header class="header header--mobile">
+      <i data-lucide="shield-check" class="header__icon"></i>
+      <span>GESUNDHEITS-RESERVE</span>
+    </header>
+
+    <section class="mobile-hero">
+      <div class="greeting-badge" id="greeting-mobile">
+        <i data-lucide="sun" class="greeting-icon"></i>
+        <span id="greeting-text-mobile">Guten Morgen!</span>
+      </div>
+      <h1 class="mobile-hero__headline">HUI! KURZE PAUSE VOM SMARTPHONE!</h1>
+      <p class="mobile-hero__domain">Du wolltest <strong id="domain-mobile" class="domain-highlight">diese Seite</strong> besuchen.</p>
+    </section>
+
+    <!-- Heart Character + Chessboard -->
+    <section class="mobile-characters">
+      <svg class="heart-char-svg" viewBox="0 0 280 180" xmlns="http://www.w3.org/2000/svg">
+        <!-- Heart character -->
+        <path d="M90 70 C90 50 70 40 60 55 C50 40 30 50 30 70 C30 90 60 110 60 110 C60 110 90 90 90 70Z"
+              fill="#e53935"/>
+        <!-- Shine -->
+        <ellipse cx="45" cy="58" rx="7" ry="10" fill="white" opacity="0.4" transform="rotate(-20,45,58)"/>
+        <!-- Face -->
+        <circle cx="48" cy="68" r="4" fill="#b71c1c"/>
+        <circle cx="72" cy="68" r="4" fill="#b71c1c"/>
+        <path d="M47 82 Q60 92 73 82" stroke="#b71c1c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- Left arm -->
+        <line x1="30" y1="78" x2="12" y2="96" stroke="#e53935" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="9" cy="99" r="6" fill="#e53935"/>
+        <!-- Right arm pointing -->
+        <line x1="90" y1="75" x2="112" y2="62" stroke="#e53935" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="116" cy="60" r="6" fill="#e53935"/>
+        <!-- Legs -->
+        <line x1="50" y1="110" x2="42" y2="140" stroke="#e53935" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="40" cy="144" r="6" fill="#e53935"/>
+        <line x1="70" y1="110" x2="78" y2="140" stroke="#e53935" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="80" cy="144" r="6" fill="#e53935"/>
+
+        <!-- Chessboard -->
+        <rect x="140" y="60" width="120" height="120" rx="6" fill="#8d6e63"/>
+        <rect x="145" y="65" width="110" height="110" rx="3" fill="#f5deb3"/>
+        <!-- Chess squares 8x8 simplified as 4x4 -->
+        <g fill="#8d6e63">
+          <rect x="145" y="65" width="27" height="27"/>
+          <rect x="199" y="65" width="27" height="27"/>
+          <rect x="172" y="92" width="27" height="27"/>
+          <rect x="226" y="92" width="29" height="27"/>
+          <rect x="145" y="119" width="27" height="27"/>
+          <rect x="199" y="119" width="27" height="27"/>
+          <rect x="172" y="146" width="27" height="29"/>
+          <rect x="226" y="146" width="29" height="29"/>
+        </g>
+        <!-- Chess pieces (simplified) -->
+        <circle cx="172" cy="80" r="8" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+        <circle cx="213" cy="107" r="8" fill="#333" stroke="#555" stroke-width="1"/>
+        <rect x="157" y="124" width="14" height="16" rx="3" fill="#f5f5f5" stroke="#ccc" stroke-width="1"/>
+        <path d="M212 130 L220 148 L204 148 Z" fill="#333" stroke="#555" stroke-width="1"/>
+      </svg>
+    </section>
+
+    <section class="mobile-content">
+      <h2 class="mobile-content__title">MANCHE DIENSTE SIND GESPERRT.</h2>
+      <p>Wir wollen nur das Beste für dich und deine Gesundheit. Nutze die Freiheit!</p>
+
+      <ul class="checklist">
+        <li><i data-lucide="check-circle-2" class="check-icon"></i> Echte Gespräche.</li>
+        <li><i data-lucide="check-circle-2" class="check-icon"></i> Brettspiele.</li>
+        <li><i data-lucide="check-circle-2" class="check-icon"></i> Draußen sein.</li>
+      </ul>
+
+      <div class="quote-box" id="quote-mobile"></div>
+    </section>
+
+    <div class="mobile-cta-wrap">
+      <button class="mobile-cta-btn" onclick="this.textContent='😄 Mach ich!'">
+        JETZT ABSCHALTEN &amp; LACHEN
+      </button>
+    </div>
+
+    <footer class="footer footer--mobile">
+      <i data-lucide="ban" class="footer__ban-icon"></i>
+      <span>TikTok · 4Chan · und andere Ablenkungen gesperrt</span>
+    </footer>
+
+  </div><!-- /layout--mobile -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
