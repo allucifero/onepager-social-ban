@@ -5,9 +5,9 @@
 # ══════════════════════════════════════════════════════════════
 set -euo pipefail
 
-NAS_HOST="192.168.178.16"
+NAS_HOST="192.168.178.165"
 NAS_USER="darkerikles"
-NAS_PORT="22"
+NAS_PORT="29"
 NAS_DIR="/share/Public/Docker/Websites/onepager_social-ban"
 
 # ── Farben ────────────────────────────────────────────────────
@@ -26,29 +26,22 @@ ssh -q -p "$NAS_PORT" -o ConnectTimeout=5 -o BatchMode=yes \
 info "Stelle Zielverzeichnis sicher: ${NAS_DIR}"
 ssh -p "$NAS_PORT" "${NAS_USER}@${NAS_HOST}" "mkdir -p '${NAS_DIR}'"
 
-# ── 3. Dateien synchronisieren ───────────────────────────────
-info "Synchronisiere Dateien…"
-rsync -avz --delete \
-  -e "ssh -p ${NAS_PORT}" \
-  --exclude='.git' \
-  --exclude='deploy.sh' \
-  --exclude='*.md' \
-  . "${NAS_USER}@${NAS_HOST}:${NAS_DIR}/"
+# ── 3. Dateien übertragen (tar via SSH, kein rsync nötig) ────
+info "Übertrage Dateien…"
+tar -czf - \
+  --exclude='./.git' \
+  --exclude='./deploy.sh' \
+  --exclude='./*.md' \
+  . \
+| ssh -p "$NAS_PORT" "${NAS_USER}@${NAS_HOST}" \
+  "mkdir -p '${NAS_DIR}' && tar -xzf - -C '${NAS_DIR}'"
 
-# ── 4. Docker Compose auf NAS starten ────────────────────────
+# ── 4. Container auf NAS bauen und starten ───────────────────
 info "Baue und starte Container auf dem NAS…"
-ssh -p "$NAS_PORT" "${NAS_USER}@${NAS_HOST}" "
-  set -e
-  cd '${NAS_DIR}'
-  # QNAP: docker compose (v2) oder docker-compose (v1)
-  if command -v docker &>/dev/null && docker compose version &>/dev/null 2>&1; then
-    docker compose up -d --build
-  elif command -v docker-compose &>/dev/null; then
-    docker-compose up -d --build
-  else
-    echo 'Docker Compose nicht gefunden!' && exit 1
-  fi
-"
+DOCKER='/share/CE_CACHEDEV1_DATA/.qpkg/container-station/bin/docker'
+DCFG='/tmp/docker-cfg-deploy'
+ssh -p "$NAS_PORT" "${NAS_USER}@${NAS_HOST}" \
+  "mkdir -p ${DCFG} && export DOCKER_HOST=unix:///var/run/docker.sock; cd '${NAS_DIR}' && ${DOCKER} --config ${DCFG} stop blockpage 2>/dev/null; ${DOCKER} --config ${DCFG} rm blockpage 2>/dev/null; ${DOCKER} --config ${DCFG} build -t blockpage:latest . && ${DOCKER} --config ${DCFG} run -d --name blockpage --restart always -p 8090:80 blockpage:latest"
 
 echo ""
 info "Deployment erfolgreich! 🎉"
