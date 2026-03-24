@@ -1,0 +1,23 @@
+version: "3"
+
+# Auf dem NAS deployen:
+#   cd /share/Public/Docker/Websites/onepager_social-ban
+#   docker-compose -f docker-compose.nas.yml up -d
+
+services:
+  blockpage:
+    image: ghcr.io/allucifero/onepager-social-ban:latest
+    container_name: blockpage
+    restart: always
+    ports:
+      - "8090:80"
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower-blockpage
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: blockpage --interval 300 --cleanup
+    environment:
+      - WATCHTOWER_NO_STARTUP_MESSAGE=true
